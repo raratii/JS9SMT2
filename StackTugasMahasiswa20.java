@@ -48,10 +48,27 @@ public class StackTugasMahasiswa20 {
         return null;
         }
     }
+    public Mahasiswa20 peekBawah() {
+        if (!isEmpty()) {
+            return stack[0]; 
+        } else {
+            return null;
+        }
+    }
+    public int jumlahTugas() {
+        return top + 1;
+    }
+    
     public void print() {
-        for (int i = 0; i <= top; i++) {
-            System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
+        if (!isEmpty()) {
+            System.out.println("== Daftar Tugas Mahasiswa (Top ke Bawah) ==");
+            for (int i = top; i >= 0; i--) {
+                System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
             }
+        } else {
             System.out.println("Stack kosong.");
         }
+    }
+    
 }
+

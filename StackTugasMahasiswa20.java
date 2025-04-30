@@ -58,7 +58,19 @@ public class StackTugasMahasiswa20 {
     public int jumlahTugas() {
         return top + 1;
     }
-    
+    public String konversiDesimalKeBiner(int nilai) {
+        StackKonversi20 stack = new StackKonversi20(); 
+        while (nilai != 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
+    }    
     public void print() {
         if (!isEmpty()) {
             System.out.println("== Daftar Tugas Mahasiswa (Top ke Bawah) ==");
@@ -68,7 +80,6 @@ public class StackTugasMahasiswa20 {
         } else {
             System.out.println("Stack kosong.");
         }
-    }
-    
+    }    
 }
 
